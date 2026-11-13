@@ -1,0 +1,6 @@
+{
+  "name": "WeatherBoard",
+  "description": "Personal weather dashboard PWA with city search autocomplete, 5-day forecast, saved favourites, offline support, and daily morning reminders.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

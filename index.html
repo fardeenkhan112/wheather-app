@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherBoard — Personal Weather Dashboard</title>
+    <meta
+      name="description"
+      content="Personal weather dashboard PWA with city search autocomplete, 5-day forecast, saved favourites, offline support, and daily morning reminders."
+    />
+    <meta property="og:title" content="WeatherBoard — Personal Weather Dashboard" />
+    <meta
+      property="og:description"
+      content="Personal weather dashboard PWA with city search autocomplete, 5-day forecast, saved favourites, offline support, and daily morning reminders."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#4778E8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="WeatherBoard" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem('weatherboard_theme');
+          var prefersDark =
+            window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var shouldUseDark =
+            savedTheme === 'dark' || (savedTheme !== 'light' && prefersDark);
+          if (shouldUseDark) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          // Ignore storage access errors during initial paint
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-[#F5F7FB] text-[#172033] antialiased dark:bg-[#0B1120] dark:text-[#F1F5F9]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
